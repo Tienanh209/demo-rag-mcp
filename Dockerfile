@@ -31,10 +31,16 @@ RUN pip install --no-cache-dir --user --retries 5 -e .
 # rebuilt from data/raw on every restart otherwise).
 RUN python -m src.server.ingest
 
+# Fixed port rather than reading Render's $PORT at container start: that
+# indirection didn't reliably reach the process in testing (app kept binding
+# the pydantic-settings default of 8000 instead). 10000 matches the PORT
+# value configured in the Render service's dashboard. Deploying to a host
+# that expects a different port (e.g. Hugging Face Spaces wants 7860) means
+# overriding CLIENT_PORT via that host's own env var / secret settings.
 ENV CLIENT_HOST=0.0.0.0 \
-    CLIENT_PORT=7860 \
+    CLIENT_PORT=10000 \
     MCP_TRANSPORT=stdio
 
-EXPOSE 7860
+EXPOSE 10000
 
 CMD ["python", "-m", "src.client.web"]

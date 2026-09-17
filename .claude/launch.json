@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "yzu-console",
+      "runtimeExecutable": ".venv/bin/python",
+      "runtimeArgs": ["-m", "src.client.web"],
+      "port": 8000
+    }
+  ]
+}

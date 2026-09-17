@@ -1,0 +1,13 @@
+.git
+.venv
+__pycache__
+*.pyc
+.pytest_cache
+.ruff_cache
+.env
+data/memory
+data/raw.backup-*
+yzu_rag_mcp.egg-info
+tests
+docs
+.claude

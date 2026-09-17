@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>YZU AI Center</title>
+<link rel="stylesheet" href="/static/app.css">
+</head>
+<body>
+
+<div class="app" id="app">
+
+  <!-- ── sidebar ───────────────────────────────────────────── -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-head">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-name">AI Center</span>
+      </div>
+      <button class="icon-btn" id="collapseBtn" aria-label="Hide sidebar" title="Hide sidebar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="3" width="18" height="18" rx="2"></rect><line x1="9" y1="3" x2="9" y2="21"></line>
+        </svg>
+      </button>
+    </div>
+
+    <button class="new-chat" id="newChat">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line>
+      </svg>
+      <span data-i18n="newChat">New chat</span>
+    </button>
+
+    <div class="history" id="history"></div>
+
+    <div class="sidebar-foot">
+      <div class="user-card" id="userCard" role="button" tabindex="0" title="Change name">
+        <span class="avatar" id="avatar">?</span>
+        <span class="user-meta">
+          <span class="user-name" id="userNameLabel">Guest</span>
+          <span class="user-sub" data-i18n="localOnly">stored in this browser</span>
+        </span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ── main ──────────────────────────────────────────────── -->
+  <main class="main">
+    <header class="topbar">
+      <button class="icon-btn" id="expandBtn" aria-label="Show sidebar" title="Show sidebar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="3" width="18" height="18" rx="2"></rect><line x1="9" y1="3" x2="9" y2="21"></line>
+        </svg>
+      </button>
+      <span class="status-badge" id="status">connecting…</span>
+      <div class="topbar-right">
+        <button class="ghost-btn" id="traceBtn" title="Show the reasoning trace">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="3"></circle><path d="M12 1v6m0 10v6M4.2 4.2l4.3 4.3m7 7l4.3 4.3M1 12h6m10 0h6M4.2 19.8l4.3-4.3m7-7l4.3-4.3"></path>
+          </svg>
+          <span data-i18n="trace">Trace</span>
+        </button>
+        <div class="lang-toggle">
+          <button class="lang-btn" id="lang-en">EN</button>
+          <button class="lang-btn" id="lang-zh">中文</button>
+        </div>
+      </div>
+    </header>
+
+    <div class="chat-wrap" id="chatWrap">
+      <div class="thread" id="thread">
+        <section class="welcome" id="welcome">
+          <div class="mascot-slot"></div>
+          <h1 class="hello" id="hello"></h1>
+          <p class="hello-sub" data-i18n="welcomeDesc">Ask about TAICA credit programs, courses, faculty, and news — every answer cites its source.</p>
+          <div class="samples" id="samples"></div>
+        </section>
+      </div>
+    </div>
+
+    <div class="composer-wrap">
+      <div class="composer">
+        <input id="input" autocomplete="off" data-i18n-placeholder="placeholder"
+               placeholder="Ask about programs, courses, faculty…">
+        <button class="send-btn" id="send" aria-label="Send">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+          </svg>
+        </button>
+      </div>
+      <p class="err-msg" id="err"></p>
+    </div>
+
+    <!-- Shown once the session has messages; the hero knight in #welcome
+         covers the empty state instead, so the two never appear together. -->
+    <div class="mascot-corner" id="mascotCorner" hidden></div>
+  </main>
+
+  <!-- ── trace drawer ──────────────────────────────────────── -->
+  <aside class="trace-panel" id="tracePanel" aria-label="Reasoning trace">
+    <div class="trace-head">
+      <span data-i18n="traceTitle">Reasoning trace</span>
+      <button class="icon-btn" id="traceClose" aria-label="Close trace">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+    <div class="trace-body" id="traceBody">
+      <p class="trace-empty" data-i18n="traceEmpty">Ask something — the intent, the routing decision, the tool chosen and every MCP call will appear here.</p>
+    </div>
+  </aside>
+
+  <div class="scrim" id="scrim"></div>
+</div>
+
+<!-- One dialog serves every prompt and confirmation. Native <dialog> brings
+     focus trapping, Esc handling and an inert background with it. -->
+<dialog class="modal" id="modal" aria-labelledby="modalTitle">
+  <form class="modal-card" id="modalForm">
+    <h2 class="modal-title" id="modalTitle"></h2>
+    <p class="modal-text" id="modalText"></p>
+    <input class="modal-input" id="modalInput" maxlength="32" autocomplete="off" spellcheck="false">
+    <div class="modal-actions">
+      <button type="button" class="btn btn-ghost" id="modalCancel"></button>
+      <button type="submit" class="btn btn-primary" id="modalOk"></button>
+    </div>
+  </form>
+</dialog>
+
+<script type="module" src="/static/app.js"></script>
+</body>
+</html>

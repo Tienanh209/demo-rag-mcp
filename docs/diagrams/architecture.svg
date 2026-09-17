@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 710" width="1280" height="710" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#64748b"/></marker>
+    <marker id="ab" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2563eb"/></marker>
+    <marker id="av" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#7c3aed"/></marker>
+    <marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#059669"/></marker>
+  </defs>
+  <rect width="1280" height="710" fill="#ffffff"/>
+
+  <!-- HOSTS -->
+  <rect x="230" y="30" width="380" height="58" rx="8" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="420" y="56" font-size="15" font-weight="600" fill="#334155" text-anchor="middle">Web Console</text>
+  <text x="420" y="75" font-size="11.5" fill="#64748b" text-anchor="middle">FastAPI · web/ · port 8000</text>
+
+  <rect x="670" y="30" width="380" height="58" rx="8" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="860" y="56" font-size="15" font-weight="600" fill="#334155" text-anchor="middle">Terminal CLI</text>
+  <text x="860" y="75" font-size="11.5" fill="#64748b" text-anchor="middle">src/client/cli.py</text>
+
+  <path d="M420,88 L420,114" stroke="#64748b" stroke-width="1.5" marker-end="url(#a)"/>
+  <path d="M860,88 L860,114" stroke="#64748b" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <!-- CLIENT -->
+  <rect x="60" y="118" width="1160" height="212" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+  <text x="82" y="146" font-size="16.5" font-weight="700" fill="#1e40af">MCP CLIENT — src/client</text>
+
+  <rect x="82" y="160" width="238" height="150" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.5"/>
+  <text x="201" y="194" font-size="14.5" font-weight="700" fill="#1e40af" text-anchor="middle">intent.py</text>
+  <text x="201" y="216" font-size="12" fill="#334155" text-anchor="middle">Intent classification</text>
+  <text x="201" y="248" font-size="11.5" fill="#64748b" text-anchor="middle">knowledge · follow_up</text>
+  <text x="201" y="266" font-size="11.5" fill="#64748b" text-anchor="middle">chitchat · meta</text>
+  <text x="201" y="284" font-size="11.5" fill="#64748b" text-anchor="middle">out_of_scope</text>
+
+  <path d="M326,235 L346,235" stroke="#2563eb" stroke-width="2" marker-end="url(#ab)"/>
+
+  <rect x="352" y="160" width="238" height="150" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.5"/>
+  <text x="471" y="188" font-size="14.5" font-weight="700" fill="#1e40af" text-anchor="middle">router.py</text>
+  <text x="471" y="209" font-size="12" fill="#334155" text-anchor="middle">Intent → subagent pipeline</text>
+  <text x="471" y="238" font-size="11" fill="#64748b" text-anchor="middle">knowledge · follow_up →</text>
+  <text x="471" y="255" font-size="11" fill="#1e40af" text-anchor="middle">retrieval · answer</text>
+  <text x="471" y="278" font-size="11" fill="#64748b" text-anchor="middle">chitchat · meta · out_of_scope →</text>
+  <text x="471" y="295" font-size="11" fill="#1e40af" text-anchor="middle">canned reply</text>
+
+  <path d="M596,235 L616,235" stroke="#2563eb" stroke-width="2" marker-end="url(#ab)"/>
+
+  <rect x="622" y="160" width="344" height="150" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.5"/>
+  <text x="794" y="187" font-size="14.5" font-weight="700" fill="#1e40af" text-anchor="middle">planner + agents/ — 3 subagents</text>
+  <rect x="640" y="203" width="150" height="42" rx="6" fill="#dbeafe" stroke="#bfdbfe"/>
+  <text x="715" y="229" font-size="12.5" font-weight="600" fill="#1e3a8a" text-anchor="middle">planner</text>
+  <rect x="800" y="203" width="150" height="42" rx="6" fill="#dbeafe" stroke="#bfdbfe"/>
+  <text x="875" y="229" font-size="12.5" font-weight="600" fill="#1e3a8a" text-anchor="middle">retrieval</text>
+  <rect x="640" y="255" width="150" height="42" rx="6" fill="#dbeafe" stroke="#bfdbfe"/>
+  <text x="715" y="281" font-size="12.5" font-weight="600" fill="#1e3a8a" text-anchor="middle">answer</text>
+  <rect x="800" y="255" width="150" height="42" rx="6" fill="#dbeafe" stroke="#bfdbfe"/>
+  <text x="875" y="281" font-size="12.5" font-weight="600" fill="#1e3a8a" text-anchor="middle">summary</text>
+
+  <path d="M972,235 L992,235" stroke="#2563eb" stroke-width="2" marker-end="url(#ab)" marker-start="url(#ab)"/>
+
+  <rect x="998" y="160" width="200" height="150" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.5"/>
+  <text x="1098" y="194" font-size="14.5" font-weight="700" fill="#1e40af" text-anchor="middle">memory.py</text>
+  <text x="1098" y="216" font-size="12" fill="#334155" text-anchor="middle">Three tiers</text>
+  <text x="1098" y="248" font-size="11.5" font-weight="600" fill="#334155" text-anchor="middle">SHORT-TERM</text>
+  <text x="1098" y="270" font-size="11.5" font-weight="600" fill="#334155" text-anchor="middle">WORKING</text>
+  <text x="1098" y="292" font-size="11.5" font-weight="600" fill="#334155" text-anchor="middle">LONG-TERM</text>
+
+  <!-- MCP -->
+  <path d="M640,332 L640,356" stroke="#7c3aed" stroke-width="2" marker-end="url(#av)"/>
+  <rect x="60" y="360" width="1160" height="102" rx="10" fill="#f5f3ff" stroke="#7c3aed" stroke-width="2"/>
+  <text x="82" y="389" font-size="16.5" font-weight="700" fill="#6d28d9">MCP — JSON-RPC</text>
+  <text x="262" y="389" font-size="12.5" fill="#7c3aed">transport: stdio (default) | streamable HTTP</text>
+  <text x="82" y="418" font-size="11" font-weight="700" fill="#94a3b8" letter-spacing="1">6 TOOLS</text>
+  <text x="168" y="418" font-size="12" fill="#334155">search_documents · get_document · get_news · index_status</text>
+  <text x="82" y="444" font-size="11" font-weight="700" fill="#94a3b8" letter-spacing="1">2 RESOURCES</text>
+  <text x="196" y="444" font-size="12" fill="#334155">yzu://doc/{url} · yzu://index/manifest</text>
+  <text x="560" y="444" font-size="11" font-weight="700" fill="#94a3b8" letter-spacing="1">1 PROMPT</text>
+  <text x="644" y="444" font-size="12" fill="#334155">grounded_answer</text>
+
+  <path d="M640,464 L640,488" stroke="#059669" stroke-width="2" marker-end="url(#ag)"/>
+
+  <!-- SERVER -->
+  <rect x="60" y="492" width="1160" height="130" rx="10" fill="#ecfdf5" stroke="#059669" stroke-width="2"/>
+  <text x="82" y="520" font-size="16.5" font-weight="700" fill="#047857">MCP SERVER — src/server</text>
+
+  <rect x="82" y="534" width="366" height="70" rx="8" fill="#ffffff" stroke="#6ee7b7" stroke-width="1.5"/>
+  <text x="265" y="562" font-size="14" font-weight="700" fill="#047857" text-anchor="middle">retriever.py</text>
+  <text x="265" y="584" font-size="12" fill="#334155" text-anchor="middle">Hybrid search</text>
+
+  <rect x="460" y="534" width="366" height="70" rx="8" fill="#ffffff" stroke="#6ee7b7" stroke-width="1.5"/>
+  <text x="643" y="562" font-size="14" font-weight="700" fill="#047857" text-anchor="middle">store.py</text>
+  <text x="643" y="584" font-size="12" fill="#334155" text-anchor="middle">Index backends</text>
+
+  <rect x="838" y="534" width="360" height="70" rx="8" fill="#ffffff" stroke="#6ee7b7" stroke-width="1.5"/>
+  <text x="1018" y="562" font-size="14" font-weight="700" fill="#047857" text-anchor="middle">ingest.py</text>
+  <text x="1018" y="584" font-size="12" fill="#334155" text-anchor="middle">Index build</text>
+
+  <!-- DATA -->
+  <rect x="60" y="640" width="1160" height="44" rx="8" fill="#fffbeb" stroke="#d97706" stroke-width="1.5"/>
+  <text x="82" y="667" font-size="11" font-weight="700" fill="#b45309" letter-spacing="1">DATA PIPELINE</text>
+  <text x="212" y="667" font-size="12.5" fill="#78350f">ai.yzu.edu.tw  →  scripts/crawl_yzu.py  →  data/raw/ · 51 pages  →  src/server/ingest.py  →  407 chunks  →  data/chroma/ + BM25</text>
+</svg>

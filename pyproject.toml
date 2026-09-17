@@ -1,0 +1,39 @@
+[project]
+name = "yzu-rag-mcp"
+version = "0.1.0"
+description = "MCP client-server RAG over the YZU AI Center knowledge base"
+requires-python = ">=3.11"
+dependencies = [
+    "mcp>=2.0.0",
+    "numpy>=1.26",
+    "rank-bm25>=0.2.2",
+    "jieba>=0.42.1",
+    "chromadb>=0.5.0",
+    "fastapi>=0.115.0",
+    "uvicorn[standard]>=0.32.0",
+    "httpx>=0.27.0",
+    "beautifulsoup4>=4.12.0",
+    "pydantic>=2.9.0",
+    "pydantic-settings>=2.6.0",
+    "rich>=13.9.0",
+    # Both are required, not optional: the corpus is Chinese, so an English
+    # question needs the embedding model to retrieve and a language model to be
+    # rewritten into Chinese search terms first.
+    "sentence-transformers>=3.3.0",
+    "openai>=1.60.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.3.0", "pytest-asyncio>=0.24.0", "ruff>=0.8.0"]
+
+[tool.setuptools.packages.find]
+include = ["src*", "scripts*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+filterwarnings = ["ignore::DeprecationWarning"]

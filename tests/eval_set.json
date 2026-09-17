@@ -1,0 +1,97 @@
+[
+  {
+    "question": "TAICA 聯盟有哪些學分學程？",
+    "expect_url_contains": "class-intro",
+    "expect_text_contains": "15 學分"
+  },
+  {
+    "question": "學分學程總共要修幾學分？",
+    "expect_url_contains": "class-intro",
+    "expect_text_contains": "15 學分"
+  },
+  {
+    "question": "學分學程之間可以抵免幾學分？",
+    "expect_url_contains": "class-intro",
+    "expect_text_contains": "6 學分"
+  },
+  {
+    "question": "要拿到學程證明至少要修幾學分？",
+    "expect_url_contains": "class-intro",
+    "expect_text_contains": "8 學分"
+  },
+  {
+    "question": "視覺技術學分學程適合哪些學生？",
+    "expect_url_contains": "class-2",
+    "expect_text_contains": "電資領域"
+  },
+  {
+    "question": "工業應用學分學程適合誰修？",
+    "expect_url_contains": "class-5",
+    "expect_text_contains": "理工學院"
+  },
+  {
+    "question": "哪一個學程最容易入門？",
+    "expect_url_contains": "class-3",
+    "expect_text_contains": "最容易入門"
+  },
+  {
+    "question": "自然語言技術學程和大型語言模型有關嗎？",
+    "expect_url_contains": "class-4",
+    "expect_text_contains": "大型語言模型"
+  },
+  {
+    "question": "AI 中心的聯絡電話是多少？",
+    "expect_url_contains": "ai.yzu.edu.tw/",
+    "expect_text_contains": "4638800"
+  },
+  {
+    "question": "AI 中心的電子郵件信箱",
+    "expect_url_contains": "ai.yzu.edu.tw/",
+    "expect_text_contains": "winni@saturn"
+  },
+  {
+    "question": "ICAIA 是什麼時候成立的？",
+    "expect_url_contains": "ai.yzu.edu.tw/",
+    "expect_text_contains": "遠東集團"
+  },
+  {
+    "question": "中心有開設哪些訓練課程？",
+    "expect_url_contains": "ai.yzu.edu.tw/",
+    "expect_text_contains": "深度學習"
+  },
+  {
+    "question": "AI 中心關注哪些應用領域？",
+    "expect_url_contains": "ai.yzu.edu.tw/",
+    "expect_text_contains": "智慧製造"
+  },
+  {
+    "question": "credit program total credits",
+    "expect_url_contains": "class-5",
+    "expect_text_contains": "15 學分"
+  },
+  {
+    "question": "跨領域學生可以修哪個學程？",
+    "expect_url_contains": "class-intro",
+    "expect_text_contains": "跨領域"
+  },
+  {
+    "question": "算力平台有幾張 GPU？",
+    "expect_url_contains": "/index.php/tw/apply",
+    "expect_text_contains": "8張NVIDIA H200"
+  },
+  {
+    "question": "H200 每張記憶體多大？",
+    "expect_url_contains": "/index.php/tw/apply",
+    "expect_text_contains": "141GB"
+  },
+  {
+    "question": "申請算力要寄信到哪裡？",
+    "expect_url_contains": "/index.php/tw/apply",
+    "expect_text_contains": "ai.support@saturn.yzu.edu.tw"
+  },
+  {
+    "question": "中心主任是誰？",
+    "expect_url_contains": "/index.php/tw/intro",
+    "expect_text_contains": "禹良治"
+  }
+]
